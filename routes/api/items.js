@@ -4,14 +4,26 @@ const router = express.Router();
 //Item Model
 const Item = require('../../models/Item');
 
-// @route   Get api/items
-// @desc    Get All items
+// @route   GET api/items
+// @desc    GET All items
 // @access  Public
 
 router.get('/', (req, res) => {
   Item.find()
     .sort({date: -1})//DES
     .then(items=> res.json(items));
+});
+
+// @route   POST api/items
+// @desc    Create a Post
+// @access  Public
+
+router.post('/', (req, res) => {
+  const newItem = new Item({
+    name: req.body.name
+  });
+
+  newItem.save().then(item => res.json(item));
 });
 
 module.exports = router;
