@@ -5,7 +5,7 @@ const router = express.Router();
 const Item = require('../../models/Item');
 
 // @route   GET api/items
-// @desc    GET All items
+// @desc    GET ALL items
 // @access  Public
 
 router.get('/', (req, res) => {
@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
 // @route   POST api/items
 // @desc    Create a Post
 // @access  Public
+
 
 router.post('/', (req, res) => {
   const newItem = new Item({
