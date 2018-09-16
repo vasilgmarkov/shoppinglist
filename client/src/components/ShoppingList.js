@@ -19,19 +19,6 @@ class ShoppingList extends Component {
     const { items } = this.props.item;
     return(
       <Container>
-      // <Button
-      //       color="dark"
-      //       style={{marginTop: '2rem', marginBottom: "2rem"}}
-      //       onClick={() => {
-      //         const name =  prompt ('Enter Item');
-      //         if(name) {
-      //           this.setState(state => ({
-      //             items: [...state.items, {id: uuid(), name}]
-      //           }));
-      //         }
-      //       }}
-      //
-      // > Add Item </Button>
       <ListGroup>
         <TransitionGroup className="shopping-list">
           {items.map(({_id, name}) =>(
